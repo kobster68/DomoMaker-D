@@ -1,6 +1,6 @@
 const helper = require('./helper.js');
 const React = require('react');
-const {createRoot} = require('react-dom/client');
+const { createRoot } = require('react-dom/client');
 
 const handleLogin = (e) => {
     e.preventDefault();
