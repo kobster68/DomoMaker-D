@@ -214,6 +214,10 @@ nav:nth-child(1) {
     overflow: hidden;
 }
 
+.domo button {
+    float: right;
+}
+
 .domo:hover {
     transition: border-color 0.2s ease-out;
     border-color: rgba(255,255,255, 0.8);

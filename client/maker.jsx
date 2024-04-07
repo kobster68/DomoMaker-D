@@ -63,6 +63,18 @@ const DomoList = (props) => {
     const domoNodes = domos.map(domo => {
         return (
             <div key={domo.id} className='domo'>
+                <button onClick={() => {
+                    const name = domo.name;
+                    const age = domo.age;
+                    const height = domo.height;
+                    helper.sendPost("/delete", {name, age, height});
+                    const loadDomosFromServer = async () => {
+                        const response = await fetch('/getDomos');
+                        const data = await response.json();
+                        setDomos(data.domos);
+                    };
+                    loadDomosFromServer();
+                }}>X</button>
                 <img src="/assets/img/domoface.jpeg" alt="domo face" className="domoFace" />
                 <h3 className="domoName">Name: {domo.name}</h3>
                 <h3 className="domoAge">Age: {domo.age}</h3>

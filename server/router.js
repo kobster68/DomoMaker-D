@@ -2,6 +2,8 @@ const controllers = require('./controllers');
 const mid = require('./middleware');
 
 const router = (app) => {
+  app.post('/delete', mid.requiresLogin, controllers.Domo.deleteDomo);
+
   app.get('/getDomos', mid.requiresLogin, controllers.Domo.getDomos);
 
   app.get('/login', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
